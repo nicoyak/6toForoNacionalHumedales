@@ -40,10 +40,28 @@ a:hover {
 /* Menú Hamburguesa Superior */
 .top-nav {
     background-color: var(--azul-profundo);
-    padding: 15px 20px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav-logos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 2px;
 }
 
 .menu-toggle {
@@ -409,14 +427,16 @@ a:hover {
     max-height: 100px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .collaborators-logos img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+    transform: scale(1.05); 
+}
+
+/* Control de escala específico para el logo del Ministerio (reducido a la mitad) */
+.collaborators-logos img.logo-ministerio {
+    max-height: 45px; 
 }
 
 /* Lightbox (Visor de pantalla completa) */
@@ -476,29 +496,7 @@ a:hover {
     color: var(--rosa);
 }
 
-/* Modificación en Organizaciones Colaboradoras */
-.collaborators-logos img {
-    max-height: 100px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.collaborators-logos img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Control de escala específico para el logo del Ministerio (reducido a la mitad) */
-.collaborators-logos img.logo-ministerio {
-    max-height: 45px; 
-}
-
-/* ========================================= */
-
-/* Modificación en Navegación Inferior */
+/* Navegación Inferior */
 .bottom-nav {
     background-color: var(--azul-profundo);
     padding: 30px 20px;
@@ -565,17 +563,19 @@ a:hover {
     #lightbox-caption {
         font-size: 1.2rem;
     }
-    @media (min-width: 769px) {
-        .nav-links {
-            display: flex;
-            position: static;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-        }
-        .menu-toggle {
-            display: none;
-        }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 0;
+        width: auto;
+    }
+    .menu-toggle {
+        display: none;
     }
 }

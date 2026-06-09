@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    // Visor para las imágenes de la galería (sin texto)
+    // Visor para las imágenes de la galería
     document.querySelectorAll('.polaroid').forEach(img => {
         img.addEventListener('click', function() {
             lightboxImg.src = this.src;
@@ -45,23 +45,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Visor para los gráficos de resultados (hereda el título <h4>)
+    // Visor para los gráficos de resultados
     document.querySelectorAll('.chart-box img').forEach(img => {
         img.addEventListener('click', function() {
             lightboxImg.src = this.src;
-            // Busca el elemento <h4> hermano anterior para capturar el título
             const title = this.previousElementSibling.textContent;
             lightboxCaption.textContent = title;
             lightbox.classList.add('active');
         });
     });
 
-    // Cerrar el visor al hacer clic en la "X"
+    // Cerrar el visor
     closeBtn.addEventListener('click', () => {
         lightbox.classList.remove('active');
     });
 
-    // Cerrar el visor al hacer clic en el fondo oscuro
     lightbox.addEventListener('click', (e) => {
         if(e.target === lightbox || e.target.classList.contains('lightbox-content')) {
             lightbox.classList.remove('active');
