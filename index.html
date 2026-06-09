@@ -6,16 +6,31 @@
     <title>Comunidad Guardiana del Humedal | Cientina</title>
     
     <link rel="stylesheet" href="https://use.typekit.net/af/309dfe/000000000000000000000000/27/l?primer=7cdcb44000000000000000000000000000000000000000000000000000000000&fvd=n7&v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <img src="logo.png" alt="Cientina" class="header-logo" onerror="this.outerHTML='<div class=\'logo-text\'>CIENTINA</div>'">
-        <button class="btn-reset" onclick="resetMap()">Ver Territorio</button>
+        
+        <div class="header-socials">
+            <a href="https://instagram.com/cientina_" target="_blank" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.tiktok.com/@cientina_" target="_blank" class="social-icon" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+            <a href="https://x.com/Cientina_" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="4" x2="20" y2="20"></line><line x1="20" y1="4" x2="4" y2="20"></line></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCgDeLkkvt0Yq6oyU0Gkm8bg" target="_blank" class="social-icon" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/cientina-ciencia-argentina/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
     </header>
 
     <div class="sidebar">
@@ -28,42 +43,52 @@
 
     <div id="panel-guardianes" class="panel-info">
         <button class="btn-close" onclick="closePanels()">✕</button>
+        <img src="guardianes_logo.png" alt="Guardianes del Paraná" class="project-logo" onerror="this.style.display='none'">
         <h2>Guardianes del Paraná</h2>
         <div class="meta-tags">
             <span class="tag">📍 Isla de los Mástiles</span>
             <span class="tag">👥 35 Participantes</span>
         </div>
-        <p>Senderismo interpretativo y diagnóstico in situ de la presión antrópica en el ecosistema insular. Intervención diseñada para transformar la teoría de conservación en experiencia física.</p>
+        <p>Senderismo interpretativo, juegos educativos y conversatorio sobre la presión antrópica en el ecosistema insular.</p>
         
-        <div class="feedback-quote">
-            "Me permitió reconocer la biodiversidad que tengo enfrente y entender el impacto real del fuego en el suelo de la isla."
-        </div>
+        <a href="guardianes.html" class="btn-large-action">Ver más</a>
+    </div>
 
-        <a href="guardianes.html" class="btn-large-action">Ver más detalles de la actividad</a>
+    <div id="panel-voz24" class="panel-info">
+        <button class="btn-close" onclick="closePanels()">✕</button>
+        <h2>La Voz del Río (2024)</h2>
+        <div class="meta-tags">
+            <span class="tag">📍 Isla la Invernada</span>
+            <span class="tag">👥 +30 Participantes</span>
+        </div>
+        <p>Saneamiento ambiental terrestre con kayakistas. Utilizó la acción directa para visibilizar la problemática de los plásticos.</p>
+        
+        <a href="lavozdelrio.html" class="btn-large-action">Ver más</a>
+    </div>
+
+    <div id="panel-voz25" class="panel-info">
+        <button class="btn-close" onclick="closePanels()">✕</button>
+        <h2>La Voz del Río (2025)</h2>
+        <div class="meta-tags">
+            <span class="tag">📍 Costa Alta</span>
+            <span class="tag">👥 +30 Participantes</span>
+        </div>
+        <p>Saneamiento ambiental terrestre, complementado con feria de economía regional. Articula la acción directa y la cultura local para visibilizar la problemática de los plásticos en el río.</p>
+        
+        <a href="lavozdelrio.html" class="btn-large-action">Ver más</a>
     </div>
 
     <div id="panel-pedalea" class="panel-info">
         <button class="btn-close" onclick="closePanels()">✕</button>
         <h2>Pedalea ConCiencia</h2>
         <div class="meta-tags">
-            <span class="tag">📍 Parque Autóctono</span>
+            <span class="tag">📍 Parque Autóctono del Acuario del Río Paraná</span>
             <span class="tag">👥 30 Participantes</span>
+            <span class="tag">🚲 7 km de recorrido</span>
         </div>
-        <p>Jornada de movilidad sustentable de 7 km. Promoción del cuidado del río integrando divulgación científica, deporte y reconocimiento de flora nativa en la trama urbana.</p>
+        <p>Jornada de movilidad sustentable. Promoción del cuidado del río integrando divulgación científica, deporte y reconocimiento de flora nativa en la trama urbana.</p>
         
-        <a href="pedalea.html" class="btn-large-action">Ver más detalles de la actividad</a>
-    </div>
-
-    <div id="panel-voz" class="panel-info">
-        <button class="btn-close" onclick="closePanels()">✕</button>
-        <h2>La Voz del Río</h2>
-        <div class="meta-tags">
-            <span class="tag">📍 Múltiples intervenciones</span>
-            <span class="tag">👥 +60 Participantes</span>
-        </div>
-        <p>Saneamiento ambiental terrestre y náutico (kayaks), complementado con feria de economía regional. Utiliza la acción directa y la cultura para visibilizar la problemática de los plásticos.</p>
-        
-        <a href="lavozdelrio.html" class="btn-large-action">Ver más detalles de la actividad</a>
+        <a href="pedalea.html" class="btn-large-action">Ver más</a>
     </div>
 
     <div id="panel-hackaton" class="panel-info">
@@ -75,11 +100,10 @@
         </div>
         <p>Taller intensivo en la Esc. Sara B. Rietti. Diseño colaborativo de contenidos digitales sobre soluciones científico-tecnológicas, integrando el paradigma de "Una Salud".</p>
         
-        <a href="hackaton.html" class="btn-large-action">Ver más detalles de la actividad</a>
+        <a href="hackaton.html" class="btn-large-action">Ver más</a>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
