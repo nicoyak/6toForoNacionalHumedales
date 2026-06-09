@@ -40,66 +40,74 @@ a:hover {
 /* Menú Superior */
 .top-nav {
     background-color: var(--azul-profundo);
-    padding: 10px 15px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
+    justify-content: center; /* Centra el logo estrictamente */
     align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    overflow-x: auto; /* Permite deslizar horizontalmente en celulares */
-    -ms-overflow-style: none; /* Oculta barra en IE y Edge */
-    scrollbar-width: none; /* Oculta barra en Firefox */
+    height: 60px;
 }
 
-.top-nav::-webkit-scrollbar {
-    display: none; /* Oculta barra de scroll en Chrome/Safari/Móviles */
-}
-
-.top-nav-logos {
+.menu-toggle {
     display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0; /* Impide que los logos se deformen */
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    left: 20px; /* Ancla el menú a la izquierda sin empujar el logo */
 }
 
-.nav-logo {
-    height: 35px; /* Tamaño estricto para evitar ocupar pantalla */
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--crema);
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.nav-logo-centered {
+    height: 35px;
     width: auto;
     object-fit: contain;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    padding: 2px;
 }
 
 .nav-links {
-    display: flex;
+    display: none;
     list-style: none;
-    gap: 10px;
-    align-items: center;
+    flex-direction: column;
+    background-color: var(--azul-profundo);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
     margin: 0;
-    padding: 0;
+}
+
+.nav-links.active {
+    display: flex;
 }
 
 .nav-links li {
-    flex-shrink: 0; /* Impide que los botones se partan en dos líneas */
+    text-align: center;
+    padding: 15px 0;
 }
 
 .nav-links a {
     color: var(--crema);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     display: block;
-    border: 1px solid var(--verde-oliva);
-    padding: 6px 15px;
-    border-radius: 20px;
-    transition: all 0.2s;
-    white-space: nowrap;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
 }
 
 .nav-links a:hover {
-    background-color: var(--arena);
-    color: var(--azul-profundo);
+    color: var(--arena);
+    background-color: transparent;
 }
 
 /* Cabecera / Hero */

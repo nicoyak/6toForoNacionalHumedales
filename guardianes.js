@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // 1. Lógica del menú hamburguesa
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // 2. Lógica del Observer para el zoom y resaltado de la línea de tiempo
     const timelineSteps = document.querySelectorAll('.timeline-step');
 
