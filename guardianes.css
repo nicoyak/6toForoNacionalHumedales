@@ -37,26 +37,35 @@ a:hover {
     color: var(--verde-oliva);
 }
 
-/* Menú Hamburguesa Superior */
+/* Menú Superior */
 .top-nav {
     background-color: var(--azul-profundo);
-    padding: 10px 20px;
+    padding: 10px 15px;
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    overflow-x: auto; /* Permite deslizar horizontalmente en celulares */
+    -ms-overflow-style: none; /* Oculta barra en IE y Edge */
+    scrollbar-width: none; /* Oculta barra en Firefox */
+}
+
+.top-nav::-webkit-scrollbar {
+    display: none; /* Oculta barra de scroll en Chrome/Safari/Móviles */
 }
 
 .top-nav-logos {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
+    flex-shrink: 0; /* Impide que los logos se deformen */
 }
 
 .nav-logo {
-    height: 35px;
+    height: 35px; /* Tamaño estricto para evitar ocupar pantalla */
     width: auto;
     object-fit: contain;
     background-color: rgba(255, 255, 255, 0.1);
@@ -64,50 +73,33 @@ a:hover {
     padding: 2px;
 }
 
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-}
-
-.bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--crema);
-    margin: 4px 0;
-    transition: 0.3s;
-}
-
 .nav-links {
-    display: none;
-    list-style: none;
-    flex-direction: column;
-    background-color: var(--azul-profundo);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.nav-links.active {
     display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-    text-align: center;
-    padding: 10px 0;
+    flex-shrink: 0; /* Impide que los botones se partan en dos líneas */
 }
 
 .nav-links a {
     color: var(--crema);
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     display: block;
+    border: 1px solid var(--verde-oliva);
+    padding: 6px 15px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
-    color: var(--arena);
+    background-color: var(--arena);
+    color: var(--azul-profundo);
 }
 
 /* Cabecera / Hero */
@@ -562,20 +554,5 @@ a:hover {
     }
     #lightbox-caption {
         font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 769px) {
-    .nav-links {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 0;
-        width: auto;
-    }
-    .menu-toggle {
-        display: none;
     }
 }
