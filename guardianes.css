@@ -476,22 +476,45 @@ a:hover {
     color: var(--rosa);
 }
 
-/* Navegación Inferior */
+/* Modificación en Organizaciones Colaboradoras */
+.collaborators-logos img {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.collaborators-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Control de escala específico para el logo del Ministerio (reducido a la mitad) */
+.collaborators-logos img.logo-ministerio {
+    max-height: 45px; 
+}
+
+/* ========================================= */
+
+/* Modificación en Navegación Inferior */
 .bottom-nav {
     background-color: var(--azul-profundo);
-    padding: 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .btn-bottom {
     background-color: var(--terra);
     color: var(--crema) !important;
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 12px 30px;
+    border-radius: 30px;
     text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .bottom-links {
@@ -501,8 +524,20 @@ a:hover {
     justify-content: center;
 }
 
+/* Transformación de enlaces a botones */
 .bottom-links a {
-    color: var(--arena);
+    color: var(--crema);
+    border: 2px solid var(--arena);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.bottom-links a:hover {
+    background-color: var(--arena);
+    color: var(--azul-profundo);
+    transform: translateY(-2px);
 }
 
 /* Responsive */
