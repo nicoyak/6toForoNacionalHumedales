@@ -157,6 +157,8 @@ a {
 .timeline-section {
     position: relative;
     padding: 2rem 0 4rem 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .timeline-line {
@@ -227,19 +229,6 @@ a {
     font-size: 1.05rem;
 }
 
-/* Fotografía dentro del bloque de texto (Premiación) */
-.inline-photo {
-    width: 100%;
-    max-width: 100%; /* Límite estricto de seguridad */
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border: 3px solid var(--rosa);
-    display: block;
-    box-sizing: border-box; /* Evita que el borde expanda el tamaño real */
-}
-
 /* Estados Activos (Animación detonada) */
 .timeline-step.active .graphic-placeholder {
     opacity: 1;
@@ -256,6 +245,31 @@ a {
     transform: translateY(0) scale(1);
     border-color: var(--magenta);
     box-shadow: 0 8px 25px rgba(175, 43, 113, 0.15);
+}
+
+/* Foto final de la línea de tiempo (Ganadores) */
+.timeline-end-photo {
+    width: 90%;
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 4px solid var(--blanco);
+    position: relative;
+    z-index: 2; /* Garantiza que se posicione por encima de la línea vertical */
+    background-color: var(--blanco);
+}
+
+.timeline-end-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.timeline-end-photo:hover img {
+    transform: scale(1.02);
 }
 
 /* Repercusión en Medios (Podcast y Fotos) */
@@ -338,7 +352,7 @@ a {
 }
 
 .btn-spotify:hover {
-    background-color: #1ed760;
+    background-color: #1ed760; /* Brillo Spotify hover */
 }
 
 /* Foto Secundaria Radio */
@@ -443,5 +457,103 @@ a {
     transform: translateY(-2px);
 }
 
-/* Responsive - Celulares */
-@media (max-width: 768px
+/* Responsive - Celulares y Tablets (Corrige el emoji gigante) */
+@media (max-width: 900px) {
+    .timeline-line {
+        left: 30px !important;
+    }
+    
+    .timeline-step, .timeline-step:nth-child(even) {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 80px !important; 
+        margin-bottom: 3rem !important;
+        position: relative !important;
+    }
+    
+    /* Forzamos geométricamente el tamaño del contenedor del emoji */
+    .graphic-placeholder {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        aspect-ratio: 1 / 1 !important;
+        position: absolute !important;
+        left: 0 !important; 
+        top: 15px !important;
+        border-width: 4px !important;
+        z-index: 2 !important;
+        transform-origin: left center;
+    }
+    
+    /* Restringimos el tamaño de la fuente interna */
+    .timeline-emoji {
+        font-size: 1.8rem !important;
+        max-width: 35px !important; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .timeline-text {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 1.5rem !important;
+        position: relative !important;
+    }
+    
+    /* Puntero visual (Triángulo) */
+    .timeline-text::before {
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: -12px;
+        border-width: 12px 12px 12px 0;
+        border-style: solid;
+        border-color: transparent var(--blanco) transparent transparent;
+        transition: border-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 1;
+    }
+
+    .timeline-step.active .timeline-text::before {
+        border-color: transparent var(--magenta) transparent transparent !important;
+    }
+
+    /* Adaptación de la foto final en móviles */
+    .timeline-end-photo {
+        width: 100% !important;
+        margin-top: 2rem !important;
+        margin-left: 0 !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Responsive - PC */
+@media (min-width: 901px) {
+    .top-nav {
+        justify-content: space-between;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+        padding: 0;
+        width: auto;
+        border: none;
+        box-shadow: none;
+    }
+    .nav-links li {
+        padding: 0;
+    }
+}
