@@ -230,12 +230,14 @@ a {
 /* Fotografía dentro del bloque de texto (Premiación) */
 .inline-photo {
     width: 100%;
+    max-width: 100%; /* Límite estricto de seguridad */
     height: auto;
     border-radius: 8px;
     margin-top: 1.5rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border: 3px solid var(--rosa);
     display: block;
+    box-sizing: border-box; /* Evita que el borde expanda el tamaño real */
 }
 
 /* Estados Activos (Animación detonada) */
